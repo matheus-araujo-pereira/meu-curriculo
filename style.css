@@ -64,3 +64,47 @@ footer {
     color: #fff;
     margin-top: 2rem;
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header h2 {
+        font-size: 1.2rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    section h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Estilização de ícones */
+.fa, .fab {
+    margin-right: 0.5rem;
+    color: #007BFF;
+}
+
+.fa:hover {
+    color: #0056b3;
+}
+
+/* Botão de download */
+.download-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+}
