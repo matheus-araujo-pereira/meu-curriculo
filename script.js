@@ -3,15 +3,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Adicione interatividade futura aqui
 });
 
-// Interatividade para animação das barras de progresso
+// Interatividade para animação das barras de progresso ao entrar na visualização
 document.addEventListener('DOMContentLoaded', () => {
     const progressBars = document.querySelectorAll('.progress-bar');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const bar = entry.target;
+                const value = bar.getAttribute('aria-valuenow');
+                bar.style.transition = 'width 3.5s ease-in-out';
+                bar.style.width = `${value}%`;
+                observer.unobserve(bar); // Para evitar que a animação seja repetida
+            }
+        });
+    }, { threshold: 0.5 }); // 50% da barra precisa estar visível
+
     progressBars.forEach(bar => {
-        const value = bar.getAttribute('aria-valuenow');
-        bar.style.width = '0%';
-        setTimeout(() => {
-            bar.style.transition = 'width 3.5s ease-in-out';
-            bar.style.width = `${value}%`;
-        }, 300);
+        bar.style.width = '0%'; // Inicializa as barras com largura 0
+        observer.observe(bar);
     });
 });
