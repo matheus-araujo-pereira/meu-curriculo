@@ -74,6 +74,32 @@ footer {
     border: 3px solid #fff;
 }
 
+/* Estilo para barras de habilidades */
+.progress {
+    height: 1.5rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    text-align: center;
+    color: #fff;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.card-body p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     header h1 {
@@ -101,5 +127,21 @@ footer {
     #contato .d-flex {
         flex-direction: column !important;
         gap: 1rem;
+    }
+
+    .progress {
+        height: 1.25rem;
+    }
+
+    .progress-bar {
+        font-size: 0.8rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-body p {
+        font-size: 0.85rem;
     }
 }
